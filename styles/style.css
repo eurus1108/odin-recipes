@@ -29,17 +29,21 @@ html {
 body {
   font-family: var(--font-default);
   font-size: 1.8rem;
+  line-height: 1.5;
   color: var(--black);
   background-color: var(--white);
 }
 
 p {
   font-family: var(--font-inter);
-  line-height: 1.5;
 }
 
 h1 {
   font-size: var(--font-size-xl);
+}
+
+h2 {
+  font-size: var(--font-size-lg);
 }
 
 ul,
@@ -57,7 +61,7 @@ ol {
 
 .go-home {
   margin: 0 auto 15rem;
-  width: 150rem;
+  max-width: 150rem;
 }
 
 .go-home a {
@@ -68,6 +72,10 @@ ol {
   font-weight: 700;
   text-decoration: none;
   color: var(--black);
+}
+
+.go-home a {
+  width: fit-content;
 }
 
 .go-home a svg {
@@ -81,9 +89,10 @@ ol {
 }
 
 .heading {
+  justify-content: space-between;
   margin: 0 auto;
-  padding-bottom: 10rem;
-  width: 125rem;
+  padding: 0 2.4rem 10rem;
+  max-width: 130rem;
   border-bottom: 3px dashed var(--green);
 }
 
@@ -111,8 +120,8 @@ ol {
 
 .img-container {
   position: relative;
-  display: block;
-  width: 70%;
+  max-width: 50rem;
+  height: fit-content;
 }
 
 .img-container::before {
@@ -131,4 +140,120 @@ ol {
   width: 100%;
   vertical-align: middle;
   border-radius: 100%;
+}
+
+@media only screen and (max-width: 1215px) {
+  h1 {
+    font-size: var(--font-size-lg);
+  }
+
+  h2 {
+    font-size: var(--font-size-md);
+  }
+
+  .go-home {
+    margin-bottom: 5rem;
+    padding: 0 2.4rem;
+  }
+
+  .go-home a {
+    font-size: var(--font-size-sm);
+  }
+
+  .go-home a svg {
+    width: 3rem;
+  }
+
+  .lables-container li {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media only screen and (max-width: 995px) {
+  .h-wrapper {
+    margin: 5rem 0;
+  }
+
+  .heading {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5rem;
+  }
+
+  .text-container {
+    margin: 0;
+  }
+
+  .text-container p,
+  .lables-container {
+    margin: 0;
+  }
+
+  .lables-container {
+    flex-wrap: wrap;
+  }
+
+  .lables-container li {
+    margin-bottom: 1rem;
+  }
+}
+
+.ingredients,
+.instruction {
+  margin: 0 auto;
+  padding: 2.4rem;
+  max-width: 111rem;
+}
+
+.ingredients .ingredients-list,
+.instruction .instruction-list {
+  margin: 3rem 6rem 0;
+}
+
+.ingredients .ingredients-list li {
+  padding-bottom: 2rem;
+  font-size: var(--font-size-md);
+  list-style-type: disc;
+}
+
+.instruction .instruction-list li {
+  position: relative;
+  padding-bottom: 2.5rem;
+  font-size: var(--font-size-md);
+}
+
+.numbering {
+  --dimension: 4rem;
+
+  position: absolute;
+  top: 0.5rem;
+  left: -5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--dimension);
+  height: var(--dimension);
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--red);
+  border-radius: 20rem;
+}
+
+@media only screen and (max-width: 995px) {
+  .ingredients .ingredients-list li,
+  .instruction .instruction-list li {
+    padding-bottom: 3rem;
+    font-size: var(--font-size-sm);
+  }
+
+  .ingredients .ingredients-list,
+  .instruction .instruction-list {
+    margin: 2rem 4rem 0;
+  }
+
+  .numbering {
+    top: -0.5rem;
+  }
 }
