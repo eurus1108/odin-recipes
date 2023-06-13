@@ -51,6 +51,11 @@ ol {
   list-style: none;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .text-bold {
   font-weight: 700;
 }
@@ -255,5 +260,54 @@ ol {
 
   .numbering {
     top: -0.5rem;
+  }
+}
+
+.hero-title,
+.recipe-list {
+  margin: 0 auto;
+  padding: 0 2.4rem;
+  max-width: 115rem;
+}
+
+.hero-title {
+  margin-bottom: 3.5rem;
+}
+
+.recipe-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.recipe-list li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.recipe-list li h2 {
+  font-size: var(--font-size-md);
+}
+
+.recipe-list li img {
+  margin-bottom: 3rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media only screen and (max-width: 895px) {
+  .recipe-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .recipe-list {
+    grid-template-columns: 1fr;
   }
 }
